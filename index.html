@@ -15,7 +15,7 @@
       <h1 class="display-3">Crystal Collector Game</h1>
       <hr>
       <h5>Directions: Click the crystals to add to your total score. Match your total score to the random number to win. But there's a catch! The crystal values are hidden and randomly assigned each round.</h5>
-      <button class="btn btn-lg btn-primary">Start a New Game</button>
+      <button id="newGameBtn" class="btn btn-lg btn-primary">Start a New Game</button>
     </div>
   </header>
 
@@ -45,7 +45,9 @@
           <div class="card-body">
             <h5>Wins: <span id="wins"></span></h5>
             <h5>Losses: <span id="losses"></span></h5>
-            <div id="crystals"></div>
+            <div class="row">
+              <div id="crystals"></div>
+            </div>
           </div>
         </div>
       </div>

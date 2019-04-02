@@ -20,10 +20,3 @@ hr {
 header h5 {
   color: #dddddd;
 }
-
-
-@media only screen (max-width: 768px) {
-  #leftColumn {
-    margin-bottom: 30px;
-  }
-}

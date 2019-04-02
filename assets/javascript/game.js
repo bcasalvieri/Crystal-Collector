@@ -23,7 +23,7 @@ $(document).ready(function() {
     gameRunning = true;
     
     // Select a random target number and write to page
-    targetNumber = 1 + (Math.floor(Math.random() * 100));
+    targetNumber = Math.floor(Math.random() * 76) + 25;
     $targetNumber.text(targetNumber);
   
     // Reset numberOptions array
@@ -34,6 +34,9 @@ $(document).ready(function() {
       var randomNumber = 1 + (Math.floor(Math.random() * 10));
       numberOptions.push(randomNumber);
     };
+
+    // Empty crystal images
+    $crystals.empty();
   
     // Assign crystal values
     for (var i = 0; i < numberOptions.length; i++) {

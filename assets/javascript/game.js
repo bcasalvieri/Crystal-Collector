@@ -1,52 +1,50 @@
-// Variables
-var targetNumber;
-var totalScore;
-var wins = 0;
-var losses = 0;
-var numberOptions = [];
-var gameRunning = false;
+// Wrap entire page in document.ready
+$(document).ready(function() {
 
+  // Create variables
+  var targetNumber;
+  var totalScore;
+  var wins = 0;
+  var losses = 0;
+  var numberOptions = [];
+  var gameRunning = false;
+  var $targetNumber
 
-// NEW GAME
-function newGame() {
-
-  // Turn game on
-  gameRunning = true;
+  // NEW GAME
+  function newGame() {
   
-  // Select a random target number and write to page
-  targetNumber = 1 + (Math.floor(Math.random() * 100));
-  $("#targetNumber").text(targetNumber);
-
-  // Reset numberOptions array
-  numberOptions = [];
-
-  // Select random number and push to numberOptions array
-  for (var i = 0; i < 4; i++) {
-    var randomNumber = 1 + (Math.floor(Math.random() * 10));
-    numberOptions.push(randomNumber);
+    // Turn game on
+    gameRunning = true;
+    
+    // Select a random target number and write to page
+    targetNumber = 1 + (Math.floor(Math.random() * 100));
+    $("#targetNumber").text(targetNumber);
+  
+    // Reset numberOptions array
+    numberOptions = [];
+  
+    // Select random number and push to numberOptions array
+    for (var i = 0; i < 4; i++) {
+      var randomNumber = 1 + (Math.floor(Math.random() * 10));
+      numberOptions.push(randomNumber);
+    };
+  
+    // Assign crystal values
+    for (var i = 0; i < numberOptions.length; i++) {
+      var imageCrystal = $("<img>");
+      imageCrystal.addClass("crystal-image");
+      imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
+      imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+      $("#crystals").append(imageCrystal);
+    };
+  
+    // Reset total score
+    totalScore = 0;
+    $("#totalScore").text(totalScore);
+  
   };
-
-  // Reset crystal images
-  $("#crystals").empty();
-
-  // Assign crystal values
-  for (var i = 0; i < numberOptions.length; i++) {
-    var imageCrystal = $("<img>");
-    imageCrystal.addClass("crystal-image");
-    imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
-    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-    $("#crystals").append(imageCrystal);
-  };
-
-  // Reset total score
-  totalScore = 0;
-  $("#totalScore").text(totalScore);
-
-};
-
-// SOMETHING IS GOING WRONG WITH MY ON CLICK EVENT!
-// GAME PLAY
-$(document).ready(function () { //NEED TO FIX THIS!
+  
+  // GAME PLAY
   // User clicks on a crystal
   $(".crystal-image").on("click", function() {
   
@@ -72,8 +70,10 @@ $(document).ready(function () { //NEED TO FIX THIS!
     };
     
   });
+  
+  // New Game Button
+  $("#newGameBtn").on("click", newGame);
 
-});
+})
 
-// New Game Button
-$("#newGameBtn").on("click", newGame);
+

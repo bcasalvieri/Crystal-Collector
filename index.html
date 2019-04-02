@@ -4,31 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
   <link rel="stylesheet" href="assets/css/style.css">
-<title>Gem Collector</title>
+  <title>Crystal Collector Game</title>
 </head>
 <body>
-  <header class="jumbotron text-center">
-      <h1>Crystal Collector Game</h1>
+  <header class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3">Crystal Collector Game</h1>
+      <hr>
+      <h5>Directions: Click the crystals to add to your total score. Match your total score to the random number to win. But there's a catch! The crystal values are hidden and randomly assigned each round.</h5>
+      <button class="btn btn-lg btn-primary">Start a New Game</button>
+    </div>
   </header>
 
-  <h1><strong>Target Number: </strong><span id="targetNumber"></span></h1>
-  
-  <h1><strong>Total Score: </strong><span id="totalScore"></span></h1>
-  
-  <div id="crystals"></div>
+  <div class="container">
+    <div class="row">
 
-  <h1><strong>Wins: </strong><span id="wins"></span></h1>
-  <h1><strong>Losses: </strong><span id="losses"></span></h1>
+      <!-- Left Column -->
+      <div class="col-12 col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <h4>Current Game Information</h4>
+          </div>
+          <div class="card-body">
+            <h5>Random Number: <span id="randomNumber"></span></h5>
+            <h5>Total Score: <span id="totalScore"></span></h5>
+            <div id="crystals"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column -->
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <h4>Scoreboard</h4>
+          </div>
+          <div class="card-body">
+            <h5>Wins: <span id="wins"></span></h5>
+            <h5>Losses: <span id="losses"></span></h5>
+            <div id="crystals"></div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
 
-  <button id="newGameBtn" class="btn btn-lg btn-primary">New Game</button>
-
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="assets/javascript/game.js"></script>
 </body>
 </html>

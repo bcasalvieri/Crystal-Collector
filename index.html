@@ -14,7 +14,7 @@
     <div class="container">
       <h1 class="display-3 font-italic my-4">Crystal Collector Game</h1>
       <hr>
-      <h5 class="my-4"><strong>Directions: </strong>Click the crystals to add to your total score. Match your total score to the random number to win. But there's a catch! The crystal values are hidden and randomly assigned each round.</h5>
+      <h5 class="my-4"><strong>Directions: </strong>Click the crystals to add to your total score. Match your total score to the target number to win. But there's a catch! The crystal values are hidden and change each round.</h5>
       <button id="newGameBtn" class="btn btn-lg btn-secondary">Start a New Game</button>
     </div>
   </header>
@@ -23,32 +23,28 @@
     <div class="row">
 
       <!-- Left Column -->
-      <div class="col-12 col-md-8">
+      <div id="leftColumn" class="col-12 col-md-8">
         <div class="card">
           <div class="card-header">
             <h4>Current Game Information</h4>
           </div>
           <div class="card-body">
-            <h5>Random Number: <span id="randomNumber"></span></h5>
+            <h5>Target Number: <span id="targetNumber"></span></h5>
             <h5>Total Score: <span id="totalScore"></span></h5>
             <div id="crystals"></div>
-            <div id="results"></div>
           </div>
         </div>
       </div>
       
       <!-- Right Column -->
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4 rightColumn">
         <div class="card">
           <div class="card-header">
             <h4>Scoreboard</h4>
           </div>
           <div class="card-body">
-            <h5>Wins: <span id="wins"></span></h5>
+            <h5>Wins: <span id="wins"></span></h5> 
             <h5>Losses: <span id="losses"></span></h5>
-            <div class="row">
-              <div id="crystals"></div>
-            </div>
           </div>
         </div>
       </div>

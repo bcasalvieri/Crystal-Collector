@@ -1,8 +1,21 @@
-.crystal-image {
-  width: 200px;
-  margin-right: 20px;
+header {
+  background-image: url("../images/crystals\ jumbotron\ bg.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+header {
+  text-shadow: 2px 2px 4px black;
+}
+header .display-3 {
+  color: #dddddd;
+  font-weight: bold;
 }
 
 hr {
-  border: 1.5px solid #dddddd;
+  border: 1px solid #dddddd;
+}
+
+header h5 {
+  color: #dddddd;
 }

@@ -14,6 +14,8 @@ $(document).ready(function() {
   var $losses = $("#losses");
   var $crystals = $("#crystals");
   var $crystalImage = $(".crystalImage");
+  var $newGameBtn = $("#newGameBtn");
+  var $results = $("#results");
 
   // NEW GAME
   function newGame() {
@@ -50,7 +52,8 @@ $(document).ready(function() {
   };
   
   // GAME PLAY
-  // User clicks on a crystal
+  // Add event listner for user clicking a crystal
+  // EVENT LISTNER NOT WORKING!!!!!
   $crystalImage.on("click", function() {
 
     if (!gameRunning) {
@@ -70,20 +73,20 @@ $(document).ready(function() {
     if (totalScore === targetNumber) {
       wins++;
       $wins.text(wins);
+      $results.text(`You win!`);
       gameRunning = false;
     }
     // If total score > target score, user loses; add 1 to losses and write to page
     else if (totalScore > targetNumber) {
       losses++;
       $losses.text(losses);
+      $results.text(`You lose!`);
       gameRunning = false;
     };
     
   });
   
-  // New Game Button
-  $("#newGameBtn").on("click", newGame);
+  // Add event listner to new game button to run newGame()
+  $newGameBtn.on("click", newGame);
 
-})
-
-
+});

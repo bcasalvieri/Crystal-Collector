@@ -12,10 +12,10 @@
 <body>
   <header class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-3">Crystal Collector Game</h1>
+      <h1 class="display-3 font-italic my-4">Crystal Collector Game</h1>
       <hr>
-      <h5>Directions: Click the crystals to add to your total score. Match your total score to the random number to win. But there's a catch! The crystal values are hidden and randomly assigned each round.</h5>
-      <button id="newGameBtn" class="btn btn-lg btn-primary">Start a New Game</button>
+      <h5 class="my-4"><strong>Directions: </strong>Click the crystals to add to your total score. Match your total score to the random number to win. But there's a catch! The crystal values are hidden and randomly assigned each round.</h5>
+      <button id="newGameBtn" class="btn btn-lg btn-secondary">Start a New Game</button>
     </div>
   </header>
 
@@ -32,6 +32,7 @@
             <h5>Random Number: <span id="randomNumber"></span></h5>
             <h5>Total Score: <span id="totalScore"></span></h5>
             <div id="crystals"></div>
+            <div id="results"></div>
           </div>
         </div>
       </div>

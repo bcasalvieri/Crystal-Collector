@@ -8,6 +8,8 @@ $(document).ready(function() {
   var losses = 0;
   var numberOptions = [];
   var gameRunning = false;
+
+  // Create variables targeting HTML elements
   var $targetNumber = $("#targetNumber");
   var $totalScore = $("#totalScore");
   var $wins = $("#wins");
@@ -55,7 +57,6 @@ $(document).ready(function() {
   
   // GAME PLAY
   // Add event listner for user clicking a crystal
-  // EVENT LISTNER NOT WORKING!!!!!
   $(document).on("click", ".crystalImage", function() {
 
     if (!gameRunning) {

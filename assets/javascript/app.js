@@ -2,7 +2,7 @@ let target = 0;
 let total = 0;
 let wins = 0;
 let losses = 0;
-let gameRunning = false;
+let isGameRunning = false;
 
 class Crystal {
   constructor(id, value) {
@@ -40,7 +40,7 @@ const createCrystals = () => {
 };
 
 const newGame = () => {
-  gameRunning = true;
+  isGameRunning = true;
 
   target = getRandomNumber(25, 100);
   $("#targetNumber").text(target);
@@ -55,18 +55,18 @@ const checkWin = () => {
   if (total === target) {
     wins++;
     $("#wins").text(wins);
-    gameRunning = false;
+    isGameRunning = false;
   } else if (total > target) {
     losses++;
     $("#losses").text(losses);
-    gameRunning = false;
+    isGameRunning = false;
   }
 };
 
 $(document).ready(newGame);
 
 $(document).on("click", ".crystalImage", function() {
-  if (!gameRunning) {
+  if (!isGameRunning) {
     return false;
   }
 

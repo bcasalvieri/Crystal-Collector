@@ -2,6 +2,7 @@ let target = 0;
 let total = 0;
 let wins = 0;
 let losses = 0;
+let gameRunning = false;
 
 class Crystal {
   constructor(id, value) {
@@ -44,17 +45,6 @@ const createCrystals = () => {
   $("#crystals").append($crystal1, $crystal2, $crystal3, $crystal4);
 };
 
-const checkWin = () => {
-  if (total === target) {
-    wins++;
-    $("#wins").text(wins);
-  } else if (total > target) {
-    losses++;
-    $("#losses").text(losses);
-  }
-  return false;
-};
-
 const newGame = () => {
   gameRunning = true;
 
@@ -67,10 +57,26 @@ const newGame = () => {
   createCrystals();
 };
 
+const checkWin = () => {
+  if (total === target) {
+    wins++;
+    $("#wins").text(wins);
+    gameRunning = false;
+  } else if (total > target) {
+    losses++;
+    $("#losses").text(losses);
+    gameRunning = false;
+  }
+};
+
 $(document).ready(newGame);
 
-$(document).on("click", $(".crystalImage"), () => {
-  console.log($(this).attr("data-crystalvalue"));
+$(document).on("click", ".crystalImage", function() {
+  if (!gameRunning) {
+    return false;
+  }
+
+  const crystalValue = parseInt($(this).attr("data-crystalvalue"));
 
   total += crystalValue;
   $("#totalScore").text(total);

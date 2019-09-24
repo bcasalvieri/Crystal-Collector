@@ -25,24 +25,18 @@ const createCrystals = () => {
   const crystal3 = new Crystal(3, getRandomNumber(1, 10));
   const crystal4 = new Crystal(4, getRandomNumber(1, 10));
 
-  const $crystal1 = $("<img>")
-    .addClass("crystalImage img-fluid col-3")
-    .attr("src", crystal1.img)
-    .attr("data-crystalvalue", crystal1.value);
-  const $crystal2 = $("<img>")
-    .addClass("crystalImage img-fluid col-3")
-    .attr("src", crystal2.img)
-    .attr("data-crystalvalue", crystal2.value);
-  const $crystal3 = $("<img>")
-    .addClass("crystalImage img-fluid col-3")
-    .attr("src", crystal3.img)
-    .attr("data-crystalvalue", crystal3.value);
-  const $crystal4 = $("<img>")
-    .addClass("crystalImage img-fluid col-3")
-    .attr("src", crystal4.img)
-    .attr("data-crystalvalue", crystal4.value);
+  const crystalsArr = [];
+  crystalsArr.push(crystal1, crystal2, crystal3, crystal4);
 
-  $("#crystals").append($crystal1, $crystal2, $crystal3, $crystal4);
+  const $crystalsDiv = $("#crystals");
+
+  crystalsArr.forEach(c => {
+    const $c = $("<img>")
+    .addClass("crystalImage img-fluid col-3")
+    .attr("src", c.img)
+    .attr("data-crystalvalue", c.value)
+    .appendTo($crystalsDiv);
+  })
 };
 
 const newGame = () => {
